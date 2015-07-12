@@ -12,6 +12,8 @@
 #import "PKCircleProgressView.h"
 #import "PKPendingView.h"
 
+@class PKRoundedBoundsButton;
+
 typedef NS_ENUM(NSUInteger, PKDownloadButtonState) {
     kPKDownloadButtonState_StartDownload,
     kPKDownloadButtonState_Pending,
@@ -36,9 +38,9 @@ IB_DESIGNABLE
 @property (nonatomic, weak) IBOutlet id <PKDownloadButtonDelegate> delegate;
 @property (nonatomic, copy) DownloadButtonTappedCallback callback;
 
-@property (nonatomic, weak, readonly) UIButton *startDownloadButton;
+@property (nonatomic, weak, readonly) PKRoundedBoundsButton *startDownloadButton;
 @property (nonatomic, weak, readonly) PKStopDownloadButton *stopDownloadButton;
-@property (nonatomic, weak, readonly) UIButton *downloadedButton;
+@property (nonatomic, weak, readonly) PKRoundedBoundsButton *downloadedButton;
 @property (nonatomic, weak, readonly) PKPendingView *pendingView;
 
 @property (nonatomic, assign) PKDownloadButtonState state;

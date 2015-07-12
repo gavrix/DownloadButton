@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIButton (PKDownloadButton)
+@interface PKRoundedBoundsButton: UIButton
 
 - (void)configureDefaultAppearance;
 - (void)cleanDefaultAppearance;

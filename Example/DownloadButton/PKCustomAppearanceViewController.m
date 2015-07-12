@@ -8,7 +8,7 @@
 
 #import "PKCustomAppearanceViewController.h"
 #import "UIImage+PKDownloadButton.h"
-#import "UIButton+PKDownloadButton.h"
+#import <DownloadButton/PKRoundedBoundsButton.h>
 
 @implementation PKCustomAppearanceViewController
 

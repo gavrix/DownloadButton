@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Katunin. All rights reserved.
 //
 
-#import "UIButton+PKDownloadButton.h"
+#import "PKRoundedBoundsButton.h"
 #import "UIImage+PKDownloadButton.h"
 
-@implementation UIButton (PKDownloadButton)
+@implementation PKRoundedBoundsButton
 
 - (void)configureDefaultAppearance {
     UIImage *backImage = [UIImage buttonBackgroundWithColor:self.tintColor];

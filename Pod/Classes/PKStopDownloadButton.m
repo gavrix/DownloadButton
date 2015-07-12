@@ -63,7 +63,6 @@ static PKStopDownloadButton *CommonInit(PKStopDownloadButton *self) {
 
 - (UIButton *)createStopButton {
     UIButton *stopButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	stopButton.tintColor = [UIColor clearColor];
     _stopButtonWidth = kDefaultStopButtonWidth;
     return stopButton;
 }

@@ -12,12 +12,16 @@
 @implementation PKRoundedBoundsButton
 
 - (void)configureDefaultAppearance {
-    UIImage *backImage = [UIImage buttonBackgroundWithColor:self.tintColor];
-    [self setBackgroundImage:[backImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.f, 15.f, 15.f, 15.f)]
-                    forState:UIControlStateNormal];
-    
-    [self setBackgroundImage:[UIImage highlitedButtonBackgroundWithColor:self.tintColor]
-                    forState:UIControlStateHighlighted];
+	UIImage *backImage = [UIImage buttonBackgroundWithColor:self.tintColor];
+	UIImage *highlightedBackImage = [UIImage highlitedButtonBackgroundWithColor:self.tintColor];
+	
+	[self setBackgroundImage:[backImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.f, 15.f, 15.f, 15.f)]
+					forState:UIControlStateNormal];
+	
+	[self setBackgroundImage:[highlightedBackImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.f, 15.f, 15.f, 15.f)]
+					forState:UIControlStateHighlighted];
+	[self setBackgroundImage:[highlightedBackImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.f, 15.f, 15.f, 15.f)]
+					forState:UIControlStateSelected];
 }
 
 

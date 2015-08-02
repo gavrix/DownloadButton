@@ -43,6 +43,9 @@ IB_DESIGNABLE
 @property (nonatomic, weak, readonly) PKRoundedBoundsButton *downloadedButton;
 @property (nonatomic, weak, readonly) PKPendingView *pendingView;
 
+@property (nonatomic, copy) IBInspectable NSString *downloadButtonTitle;
+@property (nonatomic, copy) IBInspectable NSString *downloadedButtonTitle;
+
 @property (nonatomic, assign) PKDownloadButtonState state;
 
 @end

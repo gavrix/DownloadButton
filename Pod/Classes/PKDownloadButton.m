@@ -99,8 +99,8 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
 - (void)tintColorDidChange {
 	[super tintColorDidChange];
 	
-	[self updateButton:self.startDownloadButton title:@"DOWNLOAD"];
-	[self updateButton:self.downloadedButton title:@"REMOVE"];
+	[self updateButton:self.startDownloadButton title:self.downloadButtonTitle ?: @"DOWNLOAD"];
+	[self updateButton:self.downloadedButton title: self.downloadedButtonTitle ?: @"REMOVE"];
 }
 
 
@@ -119,7 +119,7 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
     PKRoundedBoundsButton *startDownloadButton = [PKRoundedBoundsButton buttonWithType:UIButtonTypeCustom];
     [startDownloadButton configureDefaultAppearance];
     
-	[self updateButton:startDownloadButton title:@"DOWNLOAD"];
+	[self updateButton:startDownloadButton title:self.downloadButtonTitle ?: @"DOWNLOAD"];
 	
     [startDownloadButton addTarget:self
                             action:@selector(currentButtonTapped:)
@@ -138,7 +138,7 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
     PKRoundedBoundsButton *downloadedButton = [PKRoundedBoundsButton buttonWithType:UIButtonTypeCustom];
     [downloadedButton configureDefaultAppearance];
 
-	[self updateButton:downloadedButton title:@"REMOVE"];
+	[self updateButton:downloadedButton title: self.downloadedButtonTitle ?: @"REMOVE"];
     
     [downloadedButton addTarget:self
                          action:@selector(currentButtonTapped:)
@@ -195,6 +195,16 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
     }];
     
     return constraints;
+}
+
+- (void)setDownloadButtonTitle:(NSString *)downloadButtonTitle {
+	_downloadButtonTitle = downloadButtonTitle;
+	[self updateButton:self.downloadedButton title:_downloadButtonTitle];
+}
+
+- (void)setDownloadedButtonTitle:(NSString *)downloadedButtonTitle {
+	_downloadedButtonTitle = downloadedButtonTitle;
+	[self updateButton:self.downloadedButton title:_downloadedButtonTitle];
 }
 
 @end

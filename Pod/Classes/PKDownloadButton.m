@@ -199,7 +199,7 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
 
 - (void)setDownloadButtonTitle:(NSString *)downloadButtonTitle {
 	_downloadButtonTitle = downloadButtonTitle;
-	[self updateButton:self.downloadedButton title:_downloadButtonTitle];
+	[self updateButton:self.startDownloadButton title:_downloadButtonTitle];
 }
 
 - (void)setDownloadedButtonTitle:(NSString *)downloadedButtonTitle {
